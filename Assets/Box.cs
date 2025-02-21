@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Box : MonoBehaviour
 {
+    public int Food = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,9 @@ public class Box : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("Collison Works");
+        }
     }
 }
