@@ -31,10 +31,11 @@ public class Animals : MonoBehaviour
     Vector3 direction = Vector3.left;
     Vector3 Movement;
 
-    PolarBear PolarBear = new PolarBear();
-    Tiger Tiger = new Tiger();
-    Camel Camel = new Camel();
-    Dolphin Dolphin = new Dolphin();
+    Animal PolarBear = new PolarBear();
+    Animal Tiger = new Tiger();
+    Animal Camel = new Camel();
+    Animal Dolphin = new Dolphin();
+    Animal animal = null;
 
     // Start is called before the first frame update
     void Start()
@@ -57,7 +58,11 @@ public class Animals : MonoBehaviour
     {
         Vector3 Movement = direction * speed * Time.deltaTime;
         transform.position += Movement;
-
+        
+        if (animal.hunger <= 0)
+        {
+           
+        }
 
     }
     private void OnCollisionEnter2D(Collision2D collision)
