@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Box : MonoBehaviour
 {
-    public int Food = 10;
+    public GameObject Banner;
     // Start is called before the first frame update
     void Start()
     {
-        
+       Banner.SetActive(false);   
     }
 
     // Update is called once per frame
@@ -16,11 +17,12 @@ public class Box : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisonEnter2D(Collision2D collision)
     {
-        if (Input.GetKey(KeyCode.E))
-        {
-            Debug.Log("Collison Works");
-        }
+        Banner.SetActive(true);
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        Banner.SetActive(false);
     }
 }

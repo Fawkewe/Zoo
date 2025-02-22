@@ -131,7 +131,7 @@ public class Animals : MonoBehaviour
         //Debug.Log(Dolphin.CurrentAir);
         //Debug.Log(PolarBear.Temperature);
         //Debug.Log(Camel.Temperature);
-        Debug.Log(Tiger.stamina);
+        //Debug.Log(Tiger.stamina);
         switch (animaltype)
         {
             case 0:
