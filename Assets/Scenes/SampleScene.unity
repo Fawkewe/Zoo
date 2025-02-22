@@ -796,6 +796,10 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 1661837314}
+    - target: {fileID: 3292347379953287166, guid: 933901eb3ada0fc4081db49114b7be07, type: 3}
+      propertyPath: Banner
+      value: 
+      objectReference: {fileID: 1661837314}
     - target: {fileID: 7957686037282665690, guid: 933901eb3ada0fc4081db49114b7be07, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.4346414
@@ -1059,6 +1063,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1174509bfbca9d4c9cbba92d24012eb, type: 3}
+--- !u!1 &1067469315 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 405337682900514203, guid: 933901eb3ada0fc4081db49114b7be07, type: 3}
+  m_PrefabInstance: {fileID: 8461454769090223835}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1068369238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1915,6 +1924,10 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 679947992}
+    - target: {fileID: 3292347379953287166, guid: 933901eb3ada0fc4081db49114b7be07, type: 3}
+      propertyPath: Banner
+      value: 
+      objectReference: {fileID: 679947992}
     - target: {fileID: 7957686037282665690, guid: 933901eb3ada0fc4081db49114b7be07, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.61
@@ -2714,6 +2727,10 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 781654173}
+    - target: {fileID: 3292347379953287166, guid: 933901eb3ada0fc4081db49114b7be07, type: 3}
+      propertyPath: Banner
+      value: 
+      objectReference: {fileID: 781654173}
     - target: {fileID: 7957686037282665690, guid: 933901eb3ada0fc4081db49114b7be07, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.69877
@@ -2932,6 +2949,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InteractBox
       objectReference: {fileID: 0}
+    - target: {fileID: 3292347379953287166, guid: 933901eb3ada0fc4081db49114b7be07, type: 3}
+      propertyPath: Banner
+      value: 
+      objectReference: {fileID: 1067469315}
     - target: {fileID: 7957686037282665690, guid: 933901eb3ada0fc4081db49114b7be07, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.67
