@@ -7,44 +7,58 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public abstract class Animal
 {
-    public abstract void UniqueBehaviour();
    public int hunger;
    public int saturation;
    public bool CanEat;
    public float speed;
-   public bool BehaviourExecuted;
+   
+
+  public float CurrentAir;
+  public float AirMinimum;
+  public float AirSubtract;
+
+  public float Temperature;
+  public float TempartureIncrease;
+    public float DeathTemperature;
+
+    public float drowseyness;
+    public float stamina;
+
+    public abstract void Suffocation();
+ 
 }
 public class PolarBear : Animal
 {
-    public override void UniqueBehaviour()
+  public override void Suffocation()
     {
-        BehaviourExecuted = true;
+        Debug.Log("Polar Bear has died");
     }
 }
 public class Tiger : Animal
 {
-    public override void UniqueBehaviour()
+    public override void Suffocation()
     {
-        BehaviourExecuted = true;
+        Debug.Log("Tiger has fallen asleep");
     }
 }
 public class Camel : Animal
 {
-    public override void UniqueBehaviour()
+    public override void Suffocation()
     {
-        BehaviourExecuted = true;
+        Debug.Log("Camel has died");
     }
 }
 public class Dolphin : Animal
 {
-    public override void UniqueBehaviour()
+    public override void Suffocation()
     {
-        BehaviourExecuted = true;
+       Debug.Log("Dolphin has died");
     }
 }
+
 public class Animals : MonoBehaviour
 {
- 
+
     Vector3 direction = Vector3.left;
     Vector3 Movement;
 
@@ -64,19 +78,39 @@ public class Animals : MonoBehaviour
         PolarBear.saturation = 0;
         PolarBear.CanEat = true;
         PolarBear.speed = 1.5f;
-        PolarBear.BehaviourExecuted = false;
+        PolarBear.CurrentAir = 100;
+        PolarBear.AirMinimum = 0;
+        PolarBear.AirSubtract -= Time.deltaTime;
+        PolarBear.Temperature = -25.0f;
+        PolarBear.TempartureIncrease += Time.deltaTime;
+        PolarBear.DeathTemperature = 0.0f;
+
+
 
         Tiger.hunger = 80;
         Tiger.saturation = 0;
         Tiger.CanEat = true;
         Tiger.speed = 2.0f;
-        Tiger.BehaviourExecuted = false;
+        Tiger.CurrentAir = 100;
+        Tiger.AirMinimum = 0;
+        Tiger.AirSubtract -= Time.deltaTime;
+        Tiger.drowseyness -= Time.deltaTime;
+        Tiger.stamina = 30.0f;
+
+
+
 
         Camel.hunger = 50;
         Camel.saturation = 0;
         Camel.CanEat = true;
         Camel.speed = 1.0f;
-        Camel.BehaviourExecuted = false;
+        Camel.CurrentAir = 100;
+        Camel.AirMinimum = 0;
+        Camel.AirSubtract -= Time.deltaTime;
+        Camel.Temperature = 40.0f;
+        Camel.TempartureIncrease -= Time.deltaTime;
+        Camel.DeathTemperature = 0.0f;
+
         //Camel.shooter = gameObject;
 
 
@@ -84,18 +118,24 @@ public class Animals : MonoBehaviour
         Dolphin.saturation = 0;
         Dolphin.CanEat = true;
         Dolphin.speed = 3.0f;
-        Dolphin.BehaviourExecuted = false;
+        Dolphin.CurrentAir = 10f;
+        Dolphin.AirMinimum = 0;
+        Dolphin.AirSubtract += Time.deltaTime;
+
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        //Debug.Log(Dolphin.CurrentAir);
+        //Debug.Log(PolarBear.Temperature);
+        //Debug.Log(Camel.Temperature);
+        Debug.Log(Tiger.stamina);
         switch (animaltype)
         {
-            case 0: 
-                animal = PolarBear; 
+            case 0:
+                animal = PolarBear;
                 break;
             case 1:
                 animal = Tiger;
@@ -107,6 +147,7 @@ public class Animals : MonoBehaviour
                 animal = Dolphin;
                 break;
         }
+
         Vector3 Movement = direction * animal.speed * Time.deltaTime;
         transform.position += Movement;
         if (animal.hunger <= 0)
@@ -115,58 +156,36 @@ public class Animals : MonoBehaviour
             animal.CanEat = false;
 
         }
-        if (animal.BehaviourExecuted == true)
+        animal.CurrentAir -= animal.AirSubtract;
+        animal.Temperature += animal.TempartureIncrease;
+        animal.stamina += animal.drowseyness;
+        if (Dolphin.CurrentAir <= Dolphin.AirMinimum)
         {
-            switch (animaltype)
-            {
-                case 0:
-                
-                break;
-                case 1:
+            Destroy(gameObject);
+            Dolphin.Suffocation();
+        }
+        if (PolarBear.Temperature >= PolarBear.DeathTemperature)
+        {
+            Destroy(gameObject);
+            PolarBear.Suffocation();    
+        }
 
-                break;
-                case 2:
-
-                break;
-                case 3:
-                    sonar();
-                break;
-
-            }
-        } 
-        
-
+        if (Camel.Temperature <= Camel.DeathTemperature)
+        {
+            Destroy(gameObject);
+            Camel.Suffocation();
+        }
+        if (Tiger.stamina <= 0)
+        {
+            Tiger.speed = 0f;
+            Tiger.Suffocation();
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         direction *= -1;
     }
 
-    private void OnFeed()
-    {
-        switch (animaltype)
-        {
-            case 0: //pbear
-                animal.UniqueBehaviour();
-                break;
-            case 1: //tiger
-                animal.UniqueBehaviour();
-                break;
-            case 2: //camel
-                animal.UniqueBehaviour();
-                break;
-            case 3: //dolphin
-                animal.UniqueBehaviour();
-                break;
-        }
-    }
-    public void sonar()
-    {
-        AudioSource.PlayClipAtPoint(DolphinSound, transform.position, 1f);
-    }
 }
-//AudioSource.PlayClipAtPoint(DolphinSound, transform.position, 1f);
-//GameObject spit = GameObject.Instantiate(Spit);
-//spit.transform.position = shooter.transform.position + direction * 0.75f;
-//spit.GetComponent<Rigidbody2D>().linearVelocity = direction * speed * 2;
+
 

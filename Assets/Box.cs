@@ -18,7 +18,7 @@ public class Box : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKey(KeyCode.E))
         {
             Debug.Log("Collison Works");
         }
