@@ -329,7 +329,7 @@ Transform:
   m_GameObject: {fileID: 243440595}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.79, y: 2.84, z: 0}
+  m_LocalPosition: {x: -13.47, y: 2.96, z: 0}
   m_LocalScale: {x: 6.2469444, y: 4.0414042, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -586,7 +586,7 @@ Transform:
   m_GameObject: {fileID: 463915458}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.79, y: -3, z: 0}
+  m_LocalPosition: {x: -13.61, y: -2.89, z: 0}
   m_LocalScale: {x: 6.270058, y: 4.1343565, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1151,6 +1151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animaltype: 1
+  DolphinSound: {fileID: 0}
 --- !u!1001 &1120098434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1362,7 +1363,7 @@ Transform:
   m_GameObject: {fileID: 1455135400}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.5, y: -2.93, z: 0}
+  m_LocalPosition: {x: 13.88, y: -3.1, z: 0}
   m_LocalScale: {x: 6.8509035, y: 4.111204, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1458,6 +1459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animaltype: 2
+  DolphinSound: {fileID: 0}
 --- !u!58 &1566973362
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1757,6 +1759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animaltype: 3
+  DolphinSound: {fileID: 8300000, guid: d5190b5727c4c884a8b9488e406cf45b, type: 3}
 --- !u!1 &1678201467
 GameObject:
   m_ObjectHideFlags: 0
@@ -1838,7 +1841,7 @@ Transform:
   m_GameObject: {fileID: 1678201467}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.25826, y: 2.9466624, z: 0}
+  m_LocalPosition: {x: 14.55, y: 3, z: 0}
   m_LocalScale: {x: 7.242143, y: 4.106617, z: 0.8224}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2128,6 +2131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animaltype: 0
+  DolphinSound: {fileID: 0}
 --- !u!1 &1863845913
 GameObject:
   m_ObjectHideFlags: 0
@@ -2496,11 +2500,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2612310314265537842, guid: 933901eb3ada0fc4081db49114b7be07, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.395
+      value: -2.61
       objectReference: {fileID: 0}
     - target: {fileID: 2612310314265537842, guid: 933901eb3ada0fc4081db49114b7be07, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.705
+      value: -5.68
       objectReference: {fileID: 0}
     - target: {fileID: 2612310314265537842, guid: 933901eb3ada0fc4081db49114b7be07, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2537,6 +2541,10 @@ PrefabInstance:
     - target: {fileID: 5472576732087306655, guid: 933901eb3ada0fc4081db49114b7be07, type: 3}
       propertyPath: m_Name
       value: InteractBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 7682106904107333787, guid: 933901eb3ada0fc4081db49114b7be07, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
